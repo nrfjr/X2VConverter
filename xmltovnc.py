@@ -3,7 +3,7 @@ from xml.dom import minidom
 
 def generate_vnc_files(file):
 
-    XMLfile = minidom.parse(file, save_dir)
+    XMLfile = minidom.parse(file)
 
     for i in XMLfile.getElementsByTagName("file"):
 
