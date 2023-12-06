@@ -1,3 +1,4 @@
+import sys
 from xml.dom import minidom
 
 def generate_vnc_files(file):
