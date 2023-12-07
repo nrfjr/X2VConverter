@@ -29,9 +29,9 @@ def main():
 
     if len(sys.argv) > 3:
         printf(f'Too many arguments')
-    elif len(sys.argv) == 2:
+    elif len(sys.argv) == 2 or 0:
         print(f'Too few argument.')
-    elif len(sys.argv) == 1 or len(sys.argv) == 3:
+    else:
         file = sys.argv[1] if sys.argv[1]  else input("Enter RealVNC's xml file: ")
         save_dir = sys.argv[2] if sys.argv[2] input("Enter saving directory: ")
 
