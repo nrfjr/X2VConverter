@@ -8,7 +8,7 @@ def generate_vnc_files(file, save_dir):
     for i in XMLfile.getElementsByTagName("file"):
 
         content = []
-        save_file = open(f'{(save_dir)}{"/" if save_dir[-1]!="/" else ""}{i.getAttribute("name")}.vnc')
+        save_file = open(f'{(save_dir)}{"/" if save_dir[-1]!="/" else ""}{i.getAttribute("name")}.vnc', "a")
 
         content.append(f'ConnMethod=tcp\n')
         content.append(f'FriendlyName={i.getAttribute("name")}\n')
@@ -22,7 +22,8 @@ def generate_vnc_files(file, save_dir):
                     content.append(f'Identity={k.getAttribute("value")}\n')
                 elif k.getAttribute("name") is "Password":
                     content.append(f'Password={k.getAttribute("value")}\n')
-        
+                    
+        save_file.writelines(content)
         content.pop()
 
 def main():
